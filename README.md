@@ -27,7 +27,7 @@ create a webservice allow users to
   * user has levels / achievements / badges
   * admin user can merge words / delete word / lock word
 
-# archetecture
+# architecture
   * micro service
     * user management (python-flask)
     * word management (python-flask)
