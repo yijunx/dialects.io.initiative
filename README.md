@@ -17,9 +17,9 @@ create a webservice allow users to
 # web frontend
   * login with google/wechat/github/facebook or whatever, no user registration
  
-# backend api
-  * search dialects
-  * get examples
+# backend openapi
+  * search words dialects
+  * get examples / usages etc.
 
 # user management
   * user has levels / achievements / badges
@@ -32,7 +32,14 @@ create a webservice allow users to
     * vote management (python-flask)
     * ui (react)
     * email service (python-celery)
-    * notification
+    * notification (not sure how to do yet)
   * nginx api gateway, tls termination
+  * enabled logging / tracing / monitoring 
   * cloud db
-  * cloud rmq for pass events around if needed
+  * cloud rmq for pass events to worker
+
+# cost
+  * docker pro (for storing private images) -> $5 / month
+  * digitalOcean k8s  -> not sure, says $10 / month
+  * digitalOcean postgres  -> got free tier, possibly $10 / month
+  * need something to run jenkins -> well can run locally..
