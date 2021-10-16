@@ -17,9 +17,11 @@ create a webservice allow users to
 # web frontend
   * login with google/wechat/github/facebook or whatever, no user registration
  
-# backend openapi
+# backend openapi (to allow other apps to use backend services, and sell apiKey..)
   * search words dialects
   * get examples / usages etc.
+  * get random words to display
+  * get statistics
 
 # user management
   * user has levels / achievements / badges
