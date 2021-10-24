@@ -45,3 +45,12 @@ create a webservice allow users to
   * digitalOcean k8s  -> not sure, says $10 / month
   * digitalOcean postgres  -> got free tier, possibly $10 / month
   * need something to run jenkins -> well can run locally..
+
+# RBAC design
+  * user management
+    * there is role USER_ADMIN with fixed role id.
+    * USER_ADMIN has right to
+      * ban user
+      * list users (within user management)
+      * perform user management action to other services (like get/update/remove/patch roles from each service)
+  * work management 
