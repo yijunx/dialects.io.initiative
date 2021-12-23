@@ -19,6 +19,9 @@ to make sure dialects (human language) are properly stored / maintained / update
   * 【后】用户在用户profile页面可以看到自己的所有贡献
   * 【后】词条specific页面可以看到所有的贡献者
   * 【后】用户管理员可以ban用户，使他无法登陆
+  * implement ElasticSearch to better search 
+  * implement websocket to update users real time on some updates
+  * implement recommendation engine to suggect user what he/she might like to see
 
 
 # Some NICE ideas solvable by writing code
@@ -38,20 +41,11 @@ to make sure dialects (human language) are properly stored / maintained / update
 - 为什么要做，想要做什么
 - 如果是以建词库为目的，让大家觉得好玩，共此案起来有价值是比较大的动力
 - how to get users
-
-# How
-create a webservice allow users to
-
-  * browse/search the words
-  * words are with chinese char (if possible), pronouciation, explanation, usage, and possibly origin of it
-  * create new words
-  * create new versions of existing words, delete my own version, view all versions
-  * vote for the best version (each user one vote for each word), best version will be displayed on default
-  * watch a word (gets updated if there are new version or any changes)
-
   
 # web frontend
+  * react + tailwindcss
   * login with google/wechat/github/facebook or whatever, no user registration
+  * well umm now user registration is already there, passwords are salted and then hashed.
  
 # backend openapi (to allow other apps to use backend services, and sell apiKey..)
   * search words dialects
@@ -67,14 +61,14 @@ create a webservice allow users to
   * micro service
     * user management (python-flask)
     * word management (python-flask)
-    * vote management (python-flask)
     * ui (react)
     * email service (python-celery)
-    * notification (not sure how to do yet)
+    * notification (flask-socket)
   * nginx api gateway, tls termination
+  * elastic search
   * enabled logging / tracing / monitoring 
-  * cloud db
-  * cloud rmq for pass events to worker
+  * postgresql [as a service never on premis]
+  * rmq
 
 # cost
   * docker pro (for storing private images) -> $5 / month
@@ -82,11 +76,3 @@ create a webservice allow users to
   * digitalOcean postgres  -> got free tier, possibly $10 / month
   * need something to run jenkins -> well can run locally..
 
-# RBAC design
-  * user management
-    * there is role USER_ADMIN with fixed role id.
-    * USER_ADMIN has right to
-      * ban user
-      * list users (within user management)
-      * perform user management action to other services (like get/update/remove/patch roles from each service)
-  * work management 
